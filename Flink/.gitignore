@@ -1,0 +1,10 @@
+# IDEA
+.idea
+*.iml
+
+# Eclipse
+
+# Work Files
+logs/*
+output/*
+target/*
