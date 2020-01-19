@@ -1,8 +1,14 @@
+# Java
+*.class
+
 # IDEA
 .idea
 *.iml
 
 # Eclipse
+.classpath
+.project
+.settings
 
 # Work Files
 logs/*

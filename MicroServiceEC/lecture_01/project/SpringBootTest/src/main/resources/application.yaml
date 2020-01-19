@@ -1,0 +1,14 @@
+server:
+    port: 8081
+spring:
+    application:
+        name: springboottest
+    datasource:
+        # driver-class-name:com.mysql.jdbc.Driver
+        # url: jdbc:mysql://127.0.0.1:3306/youfands?useUnicode=true&characterEncoding=gbk&zeroDateTimeBehavior=convertToNull
+        # username: root
+        # password: 123456
+        driver-class-name: org.h2.Driver
+        url: jdbc:h2:mem:test
+        schema: classpath:db/schema.sql
+        data: classpath:db/data.sql
