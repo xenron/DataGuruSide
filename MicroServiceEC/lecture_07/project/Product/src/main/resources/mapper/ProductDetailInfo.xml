@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.youfan.mappers.ProductDetailMapper">
+
+    <insert id="insertProductDetail" parameterType="com.youfan.entity.ProductDetail">
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into youfands_productdetail (productid,productplace,productdescription,productbrand,productweight,productspecification,productdetaipicurl) values (#{productid},#{productplace},#{productdescription},#{productbrand},#{productweight},#{productspecification},#{productdetaipicurl})
+    </insert>
+
+    <select id="findProductDetailByProductId" parameterType="com.youfan.entity.ProductInfo" resultType="com.youfan.entity.ProductDetail">
+        select * from youfands_productdetail where productid = #{id}
+    </select>
+
+
+</mapper>
