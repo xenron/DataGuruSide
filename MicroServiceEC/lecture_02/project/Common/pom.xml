@@ -2,14 +2,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
-        <artifactId>youfanDS</artifactId>
-        <groupId>com.youfan</groupId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
-    <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>youfancommon</artifactId>
+    <parent>
+        <groupId>com.test</groupId>
+        <artifactId>basic-common</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom_common.xml</relativePath>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>common</artifactId>
 
 
 </project>

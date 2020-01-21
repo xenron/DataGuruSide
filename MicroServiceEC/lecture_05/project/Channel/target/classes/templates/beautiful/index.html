@@ -78,10 +78,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="search">
 	  <div class="stay">Search Product</div>
 	  <div class="stay_right">
-		  <form action="searchProduct">
-		  <input type="text" th:name="searchword" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" />
+		  <input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" />
 		  <input type="submit" value="" />
-		  </form>
 	  </div>
 	  <div class="clearfix"> </div>
 	</div>
@@ -170,7 +168,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="b-link-stroke b-animate-go  thickbox">
 						<img th:src="${productlist[0].productpicurl}"  alt="" th:width="260" th:height="210"/> </div>
 					<div class="grid_2">
-						<p th:utext="${productlist[0].producttitle}"></p>
+						<p th:text="${productlist[0].producttitle}"></p>
 						<ul class="grid_2-bottom">
 							<li class="grid_2-left"><p th:text="${productlist[0].productprice}"></p></li>
 							<li class="grid_2-right"><div class="btn btn-primary btn-normal btn-inline " target="_self" title="Get It">立即购买</div></li>

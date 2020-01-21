@@ -5,19 +5,24 @@
 
     <parent>
         <groupId>com.test</groupId>
-        <artifactId>basic</artifactId>
+        <artifactId>basic-spring-boot</artifactId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
+        <relativePath>../pom_spring_boot.xml</relativePath>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
     <artifactId>spring-boot-test</artifactId>
 
+    <properties>
+        <!-- project -->
+        <local.project.version>1.0-SNAPSHOT</local.project.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.test</groupId>
             <artifactId>common</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${local.project.version}</version>
         </dependency>
     </dependencies>
 

@@ -5,19 +5,24 @@
 
     <parent>
         <groupId>com.test</groupId>
-        <artifactId>basic</artifactId>
+        <artifactId>basic-spring-cloud</artifactId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
+        <relativePath>../pom_spring_cloud.xml</relativePath>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
     <artifactId>redis-service</artifactId>
 
+    <properties>
+        <!-- project -->
+        <local.project.version>1.0-SNAPSHOT</local.project.version>
+    </properties>
+
     <dependencies>
-        <!--redis-->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <groupId>com.test</groupId>
+            <artifactId>common</artifactId>
+            <version>${local.project.version}</version>
         </dependency>
     </dependencies>
 
