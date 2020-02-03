@@ -2,19 +2,18 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
+    <artifactId>data-collect</artifactId>
 
     <parent>
-        <groupId>com.youfan</groupId>
-        <artifactId>billionWarehouse</artifactId>
+        <groupId>com.test</groupId>
+        <artifactId>basic-spring-boot</artifactId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom_spring_boot.xml</relativePath>
     </parent>
 
-    <groupId>com.youfan</groupId>
-    <artifactId>BillonDataCollect</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
-
+    <!--
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -49,4 +48,5 @@
             </resource>
         </resources>
     </build>
+    -->
 </project>
