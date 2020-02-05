@@ -1,12 +1,14 @@
-package com.youfan.input;
+package com.example.input;
 
-public class AppProductHuoDong extends AppInputDeviceLog{
-    private String huodongId;//活动id
+public class AppProductCartLog extends AppInputDeviceLog{
     private String deviceId;//设备id
-    private String userId;//用户id
-    private String scantime;//浏览的时间
-    private String jumpTime;//跳出活动的时间
+    private String pindaoId;//频道id
+    private String productTypeId;//产品类别id
+    private String productId;//产品id
+    private String operatorType;//0添加1删除
+    private String operatorTime;//操作时间戳
     private String ip;//用户app访问的ip
+    private String userId;//用户id
     private String country;//国家
     private String province;//省
     private String city;//市
@@ -15,48 +17,60 @@ public class AppProductHuoDong extends AppInputDeviceLog{
     private String appVersion;//app版本
     private String appChannel;//渠道
 
-    public String getHuodongId() {
-        return huodongId;
-    }
-
-    public void setHuodongId(String huodongId) {
-        this.huodongId = huodongId;
-    }
-
-    @Override
-    public String getDeviceId() {
-        return deviceId;
-    }
-
-    @Override
-    public void setDeviceId(String deviceId) {
-        this.deviceId = deviceId;
-    }
-
-    @Override
     public String getUserId() {
         return userId;
     }
 
-    @Override
     public void setUserId(String userId) {
         this.userId = userId;
     }
 
-    public String getScantime() {
-        return scantime;
+    public String getDeviceId() {
+        return deviceId;
     }
 
-    public void setScantime(String scantime) {
-        this.scantime = scantime;
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
     }
 
-    public String getJumpTime() {
-        return jumpTime;
+    public String getPindaoId() {
+        return pindaoId;
     }
 
-    public void setJumpTime(String jumpTime) {
-        this.jumpTime = jumpTime;
+    public void setPindaoId(String pindaoId) {
+        this.pindaoId = pindaoId;
+    }
+
+    public String getProductTypeId() {
+        return productTypeId;
+    }
+
+    public void setProductTypeId(String productTypeId) {
+        this.productTypeId = productTypeId;
+    }
+
+    public String getProductId() {
+        return productId;
+    }
+
+    public void setProductId(String productId) {
+        this.productId = productId;
+    }
+
+    public String getOperatorType() {
+        return operatorType;
+    }
+
+    public void setOperatorType(String operatorType) {
+        this.operatorType = operatorType;
+    }
+
+    public String getOperatorTime() {
+        return operatorTime;
+    }
+
+    public void setOperatorTime(String operatorTime) {
+        this.operatorTime = operatorTime;
     }
 
     public String getIp() {

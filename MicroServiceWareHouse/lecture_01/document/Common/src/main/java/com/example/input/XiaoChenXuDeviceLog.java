@@ -1,4 +1,4 @@
-package com.youfan.input;
+package com.example.input;
 
 public class XiaoChenXuDeviceLog{
     private String userId;//用户id

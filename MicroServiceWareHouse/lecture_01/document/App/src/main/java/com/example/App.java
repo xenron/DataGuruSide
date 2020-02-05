@@ -1,4 +1,4 @@
-package com.youfan;
+package com.example;
 
 /**
  * Hello world!

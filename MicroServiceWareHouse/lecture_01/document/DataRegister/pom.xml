@@ -12,10 +12,6 @@
 
     <modelVersion>4.0.0</modelVersion>
     <artifactId>data-register</artifactId>
-    <packaging>pom</packaging>
-
-    <!--
-    <name>BillonDataRegiter</name>
-    -->
+    <name>DataRegiter</name>
 
 </project>

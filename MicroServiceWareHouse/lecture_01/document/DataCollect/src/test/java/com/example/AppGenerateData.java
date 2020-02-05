@@ -1,7 +1,7 @@
-package com.youfan;
+package com.example;
 
 import com.alibaba.fastjson.JSONObject;
-import com.youfan.input.AppProductLog;
+import com.example.input.AppProductLog;
 
 import java.io.InputStream;
 import java.io.OutputStream;

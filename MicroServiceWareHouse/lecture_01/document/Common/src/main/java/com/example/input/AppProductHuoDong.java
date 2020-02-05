@@ -1,7 +1,6 @@
-package com.youfan.input;
+package com.example.input;
 
-public class XiaoChenXuProductHuoDong extends XiaoChenXuDeviceLog{
-    private String weixinAccount;//微信号
+public class AppProductHuoDong extends AppInputDeviceLog{
     private String huodongId;//活动id
     private String deviceId;//设备id
     private String userId;//用户id
@@ -11,16 +10,10 @@ public class XiaoChenXuProductHuoDong extends XiaoChenXuDeviceLog{
     private String country;//国家
     private String province;//省
     private String city;//市
-
-    @Override
-    public String getWeixinAccount() {
-        return weixinAccount;
-    }
-
-    @Override
-    public void setWeixinAccount(String weixinAccount) {
-        this.weixinAccount = weixinAccount;
-    }
+    private String network;//网络方式
+    private String yunYinShang;//运营商
+    private String appVersion;//app版本
+    private String appChannel;//渠道
 
     public String getHuodongId() {
         return huodongId;
@@ -96,5 +89,37 @@ public class XiaoChenXuProductHuoDong extends XiaoChenXuDeviceLog{
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public String getNetwork() {
+        return network;
+    }
+
+    public void setNetwork(String network) {
+        this.network = network;
+    }
+
+    public String getYunYinShang() {
+        return yunYinShang;
+    }
+
+    public void setYunYinShang(String yunYinShang) {
+        this.yunYinShang = yunYinShang;
+    }
+
+    public String getAppVersion() {
+        return appVersion;
+    }
+
+    public void setAppVersion(String appVersion) {
+        this.appVersion = appVersion;
+    }
+
+    public String getAppChannel() {
+        return appChannel;
+    }
+
+    public void setAppChannel(String appChannel) {
+        this.appChannel = appChannel;
     }
 }

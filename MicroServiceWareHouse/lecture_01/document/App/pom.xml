@@ -12,6 +12,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <artifactId>app</artifactId>
+    <name>App</name>
 
     <properties>
         <!-- project -->

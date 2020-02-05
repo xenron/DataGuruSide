@@ -1,38 +1,53 @@
-package com.youfan.input;
+package com.example.input;
 
-public class PcProductLog extends PcInputDevcieLog{
-    private String pindaoId;//频道id
-    private String productTypeId;//产品类别id
-    private String productId;//产品id
+public class XiaoChenXuProductHuoDong extends XiaoChenXuDeviceLog{
+    private String weixinAccount;//微信号
+    private String huodongId;//活动id
+    private String deviceId;//设备id
+    private String userId;//用户id
     private String scantime;//浏览的时间
-    private String jumpTime;//跳出商品的时间
+    private String jumpTime;//跳出活动的时间
     private String ip;//用户app访问的ip
     private String country;//国家
     private String province;//省
     private String city;//市
 
-    public String getPindaoId() {
-        return pindaoId;
+    @Override
+    public String getWeixinAccount() {
+        return weixinAccount;
     }
 
-    public void setPindaoId(String pindaoId) {
-        this.pindaoId = pindaoId;
+    @Override
+    public void setWeixinAccount(String weixinAccount) {
+        this.weixinAccount = weixinAccount;
     }
 
-    public String getProductTypeId() {
-        return productTypeId;
+    public String getHuodongId() {
+        return huodongId;
     }
 
-    public void setProductTypeId(String productTypeId) {
-        this.productTypeId = productTypeId;
+    public void setHuodongId(String huodongId) {
+        this.huodongId = huodongId;
     }
 
-    public String getProductId() {
-        return productId;
+    @Override
+    public String getDeviceId() {
+        return deviceId;
     }
 
-    public void setProductId(String productId) {
-        this.productId = productId;
+    @Override
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
+    }
+
+    @Override
+    public String getUserId() {
+        return userId;
+    }
+
+    @Override
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getScantime() {
@@ -59,32 +74,26 @@ public class PcProductLog extends PcInputDevcieLog{
         this.ip = ip;
     }
 
-    @Override
     public String getCountry() {
         return country;
     }
 
-    @Override
     public void setCountry(String country) {
         this.country = country;
     }
 
-    @Override
     public String getProvince() {
         return province;
     }
 
-    @Override
     public void setProvince(String province) {
         this.province = province;
     }
 
-    @Override
     public String getCity() {
         return city;
     }
 
-    @Override
     public void setCity(String city) {
         this.city = city;
     }

@@ -1,11 +1,11 @@
-package com.youfan;
+package com.example;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BillonDataCollectStarter {
+public class DataCollectStarter {
     public static void main(String[] args) {
-        SpringApplication.run(BillonDataCollectStarter.class,args);
+        SpringApplication.run(DataCollectStarter.class, args);
     }
 }
