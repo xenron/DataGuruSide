@@ -1,3 +1,6 @@
+# Java
+*.class
+
 # IDEA
 .idea
 *.iml
@@ -9,3 +12,7 @@
 .project
 .settings
 
+# Work Files
+logs/*
+output/*
+target/*

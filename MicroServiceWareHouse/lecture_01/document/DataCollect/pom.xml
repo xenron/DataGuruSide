@@ -5,9 +5,9 @@
 
     <parent>
         <groupId>com.test</groupId>
-        <artifactId>basic-spring-cloud</artifactId>
+        <artifactId>basic-spring-boot</artifactId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>../pom_spring_cloud.xml</relativePath>
+        <relativePath>../pom_spring_boot.xml</relativePath>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -15,6 +15,11 @@
     <name>DataCollect</name>
 
     <dependencies>
+        <dependency>
+            <groupId>com.test</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 </project>
