@@ -14,4 +14,7 @@
         <relativePath>../pom_spring_cloud.xml</relativePath>
     </parent>
 
+    <dependencies>
+    </dependencies>
+
 </project>
