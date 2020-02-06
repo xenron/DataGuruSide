@@ -7,17 +7,17 @@
     <artifactId>basic-spring-boot</artifactId>
     <packaging>pom</packaging>
 
+    <properties>
+        <!-- Spring Boot -->
+        <spring.boot.version>2.2.2.RELEASE</spring.boot.version>
+    </properties>
+
     <parent>
         <groupId>com.test</groupId>
         <artifactId>basic-spring</artifactId>
         <version>1.0-SNAPSHOT</version>
         <relativePath>pom_spring.xml</relativePath>
     </parent>
-
-    <properties>
-        <!-- Spring Boot -->
-        <spring.boot.version>2.2.2.RELEASE</spring.boot.version>
-    </properties>
 
     <dependencies>
         <!-- Spring Boot -->
@@ -48,5 +48,41 @@
             <version>1.3.0</version>
         </dependency>
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Greenwich.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring.boot.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
