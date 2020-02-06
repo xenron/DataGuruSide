@@ -1,6 +1,8 @@
 # Build
 
+```
 mvn clean idea:clean idea:idea compile
+```
 
 # Spring Boot
 
