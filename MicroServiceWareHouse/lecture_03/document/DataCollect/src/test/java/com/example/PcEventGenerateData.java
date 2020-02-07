@@ -2,7 +2,7 @@ package com.example;
 
 import com.alibaba.fastjson.JSONObject;
 import com.example.enums.LogType;
-import com.example.input.PcProductHuoDong;
+import com.example.input.PcProductEvent;
 
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -10,7 +10,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.*;
 
-public class PcHuoDongGenerateData {
+public class PcEventGenerateData {
 
     private static int[] days  = new int[]{3,4,5,6};
     static Random random = new Random();
@@ -45,36 +45,36 @@ public class PcHuoDongGenerateData {
 
 
 
-    private static PcProductHuoDong genernateData(){
-        PcProductHuoDong pcProductHuoDong = new PcProductHuoDong();
+    private static PcProductEvent genernateData(){
+        PcProductEvent pcProductEvent = new PcProductEvent();
         int randomSelect = random.nextInt(3);
         if(randomSelect > 1){
-            pcProductHuoDong.setDeviceId(deviceIds[random.nextInt(deviceIds.length)]);
+            pcProductEvent.setDeviceId(deviceIds[random.nextInt(deviceIds.length)]);
         }else {
-            pcProductHuoDong.setMacAdress(macAdresses[random.nextInt(macAdresses.length)]);
+            pcProductEvent.setMacAdress(macAdresses[random.nextInt(macAdresses.length)]);
         }
-        pcProductHuoDong.setUserId(userIds[random.nextInt(userIds.length)]);
-        pcProductHuoDong.setIp(ips[random.nextInt(ips.length)]);
-        pcProductHuoDong.setCountry(countrys[random.nextInt(countrys.length)]);
-        pcProductHuoDong.setProvince(provinces[random.nextInt(provinces.length)]);
-        pcProductHuoDong.setCity(citys[random.nextInt(citys.length)]);
+        pcProductEvent.setUserId(userIds[random.nextInt(userIds.length)]);
+        pcProductEvent.setIp(ips[random.nextInt(ips.length)]);
+        pcProductEvent.setCountry(countrys[random.nextInt(countrys.length)]);
+        pcProductEvent.setProvince(provinces[random.nextInt(provinces.length)]);
+        pcProductEvent.setCity(citys[random.nextInt(citys.length)]);
         String timerandom = timesList.get(random.nextInt(timesList.size()));
         String openTime = timerandom.split("==")[0];
         String leaveTime = timerandom.split("==")[1];
-        pcProductHuoDong.setOpenTime(openTime);
-        pcProductHuoDong.setLeaveTime(leaveTime);
-        pcProductHuoDong.setHuodongId(huodongIdes[random.nextInt(huodongIdes.length)]);
-        pcProductHuoDong.setCookie(cookiees[random.nextInt(cookiees.length)]);
-        pcProductHuoDong.setRemoteName(remoteNamees[random.nextInt(remoteNamees.length)]);
-        pcProductHuoDong.setDeviceType(deviceTypees[random.nextInt(deviceTypees.length)]);
-        pcProductHuoDong.setOs(oses[random.nextInt(oses.length)]);
-        pcProductHuoDong.setBrower(broweres[random.nextInt(broweres.length)]);
-        pcProductHuoDong.setResolution(resolutiones[random.nextInt(resolutiones.length)]);
-        pcProductHuoDong.setSourceInfo(sourceInfoes[random.nextInt(sourceInfoes.length)]);
-        pcProductHuoDong.setSourceType(sourceTypees[random.nextInt(sourceTypees.length)]);
-        pcProductHuoDong.setSrcDomain(srcDomaines[random.nextInt(srcDomaines.length)]);
-        pcProductHuoDong.setLogType(LogType.PCHUODONG);
-        return  pcProductHuoDong;
+        pcProductEvent.setOpenTime(openTime);
+        pcProductEvent.setLeaveTime(leaveTime);
+        pcProductEvent.setHuodongId(huodongIdes[random.nextInt(huodongIdes.length)]);
+        pcProductEvent.setCookie(cookiees[random.nextInt(cookiees.length)]);
+        pcProductEvent.setRemoteName(remoteNamees[random.nextInt(remoteNamees.length)]);
+        pcProductEvent.setDeviceType(deviceTypees[random.nextInt(deviceTypees.length)]);
+        pcProductEvent.setOs(oses[random.nextInt(oses.length)]);
+        pcProductEvent.setBrower(broweres[random.nextInt(broweres.length)]);
+        pcProductEvent.setResolution(resolutiones[random.nextInt(resolutiones.length)]);
+        pcProductEvent.setSourceInfo(sourceInfoes[random.nextInt(sourceInfoes.length)]);
+        pcProductEvent.setSourceType(sourceTypees[random.nextInt(sourceTypees.length)]);
+        pcProductEvent.setSrcDomain(srcDomaines[random.nextInt(srcDomaines.length)]);
+        pcProductEvent.setLogType(LogType.PCHUODONG);
+        return pcProductEvent;
 
     }
 
@@ -120,10 +120,10 @@ public class PcHuoDongGenerateData {
 
     public static void main(String[] args) {
         for (int i = 0; i < 50; i++) {
-            PcProductHuoDong pcProductHuoDong = genernateData();
-            System.out.println(JSONObject.toJSON(pcProductHuoDong));
+            PcProductEvent pcProductEvent = genernateData();
+            System.out.println(JSONObject.toJSON(pcProductEvent));
 
-            postHttpMethod("http://127.0.0.1:8081/collectAppData", JSONObject.toJSONString(pcProductHuoDong));
+            postHttpMethod("http://127.0.0.1:8081/collectAppData", JSONObject.toJSONString(pcProductEvent));
         }
     }
 }

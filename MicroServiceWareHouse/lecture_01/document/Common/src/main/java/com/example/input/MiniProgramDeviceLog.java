@@ -1,6 +1,6 @@
 package com.example.input;
 
-public class XiaoChenXuDeviceLog extends LogParent{
+public class MiniProgramDeviceLog {
     private String userId;//用户id
     private String deviceId = "";//设备id
     private String weixinAccount = "";//微信号

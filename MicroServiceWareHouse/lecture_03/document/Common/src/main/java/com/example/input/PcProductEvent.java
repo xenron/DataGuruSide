@@ -1,6 +1,6 @@
 package com.example.input;
 
-public class PcProductHuoDong extends PcInputDevcieLog{
+public class PcProductEvent extends PcInputDevcieLog{
     private String huodongId;//活动id
     private String openTime;//打开时间
     private String leaveTime;//离开时间

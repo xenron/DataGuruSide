@@ -2,7 +2,7 @@ package com.example;
 
 import com.alibaba.fastjson.JSONObject;
 import com.example.enums.LogType;
-import com.example.input.XiaoChenXuProductCartLog;
+import com.example.input.MiniProgramProductCartLog;
 
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -10,7 +10,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.*;
 
-public class XiaoChenXuCartGenerateData {
+public class MiniProgramCartGenerateData {
     private String weixinAccount;//微信号
     private String deviceId;//设备id
     private String pindaoId;//频道id
@@ -53,8 +53,8 @@ public class XiaoChenXuCartGenerateData {
 
 
 
-    private static XiaoChenXuProductCartLog genernateData(){
-        XiaoChenXuProductCartLog xiaoChenXuProductCartLog = new XiaoChenXuProductCartLog();
+    private static MiniProgramProductCartLog genernateData(){
+        MiniProgramProductCartLog xiaoChenXuProductCartLog = new MiniProgramProductCartLog();
         xiaoChenXuProductCartLog.setDeviceId(deviceIds[random.nextInt(deviceIds.length)]);
         xiaoChenXuProductCartLog.setProductTypeId(productTypeIs[random.nextInt(productTypeIs.length)]);
         xiaoChenXuProductCartLog.setProductId(productIds[random.nextInt(productIds.length)]);
@@ -128,7 +128,7 @@ public class XiaoChenXuCartGenerateData {
 
     public static void main(String[] args) {
         for (int i=0;i<50;i++) {
-            XiaoChenXuProductCartLog xiaoChenXuProductCartLog = genernateData();
+            MiniProgramProductCartLog xiaoChenXuProductCartLog = genernateData();
             System.out.println(JSONObject.toJSON(xiaoChenXuProductCartLog));
             postHttpMethod("http://127.0.0.1:8081/collectAppData", JSONObject.toJSONString(xiaoChenXuProductCartLog));
         }

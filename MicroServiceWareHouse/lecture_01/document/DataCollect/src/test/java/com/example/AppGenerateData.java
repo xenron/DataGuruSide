@@ -111,8 +111,9 @@ public class AppGenerateData {
     }
 
     public static void main(String[] args) {
-            AppProductLog appProductLog = genernateData();
-        System.out.println(JSONObject.toJSON(appProductLog));
-            //postHttpMethod("http://127.0.0.1:8081/testCollectData","helloword !!");
+        AppProductLog appProductLog = genernateData();
+        String json = JSONObject.toJSONString(appProductLog);
+        System.out.println(json);
+        postHttpMethod("http://127.0.0.1:8081/testCollectData", json);
     }
 }

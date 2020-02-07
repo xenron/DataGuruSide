@@ -2,7 +2,7 @@ package com.example;
 
 import com.alibaba.fastjson.JSONObject;
 import com.example.enums.LogType;
-import com.example.input.XiaoChenXuProductHuoDong;
+import com.example.input.MiniProgramProductHuoDong;
 
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -10,7 +10,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.*;
 
-public class XiaoChenXuHuoDongGenerateData {
+public class MiniProgramEventGenerateData {
 
     private static String [] weixinAccountinfoes = new String[]{
             "xiaogao==小高==男==上海","xiaobai==小白==女==深圳","xiaohei==小黑==男==北京"
@@ -39,8 +39,8 @@ public class XiaoChenXuHuoDongGenerateData {
 
 
 
-    private static XiaoChenXuProductHuoDong genernateData(){
-        XiaoChenXuProductHuoDong xiaoChenXuProductHuoDong = new XiaoChenXuProductHuoDong();
+    private static MiniProgramProductHuoDong genernateData(){
+        MiniProgramProductHuoDong xiaoChenXuProductHuoDong = new MiniProgramProductHuoDong();
         xiaoChenXuProductHuoDong.setDeviceId(deviceIds[random.nextInt(deviceIds.length)]);
         xiaoChenXuProductHuoDong.setHuodongId(huodongIdes[random.nextInt(huodongIdes.length)]);
         xiaoChenXuProductHuoDong.setUserId(userIds[random.nextInt(userIds.length)]);
@@ -114,7 +114,7 @@ public class XiaoChenXuHuoDongGenerateData {
 
     public static void main(String[] args) {
         for (int i = 0; i < 50; i++) {
-            XiaoChenXuProductHuoDong xiaoChenXuProductHuoDong = genernateData();
+            MiniProgramProductHuoDong xiaoChenXuProductHuoDong = genernateData();
             System.out.println(JSONObject.toJSON(xiaoChenXuProductHuoDong));
             postHttpMethod("http://127.0.0.1:8081/collectAppData", JSONObject.toJSONString(xiaoChenXuProductHuoDong));
         }

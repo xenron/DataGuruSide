@@ -19,6 +19,7 @@
         <local.project.version>1.0-SNAPSHOT</local.project.version>
     </properties>
 
+    <!--
     <dependencies>
         <dependency>
             <groupId>com.test</groupId>
@@ -26,5 +27,6 @@
             <version>${local.project.version}</version>
         </dependency>
     </dependencies>
+    -->
 
 </project>

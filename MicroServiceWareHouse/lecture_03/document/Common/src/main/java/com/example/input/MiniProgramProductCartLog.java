@@ -1,6 +1,6 @@
 package com.example.input;
 
-public class XiaoChenXuProductCartLog extends XiaoChenXuDeviceLog {
+public class MiniProgramProductCartLog extends MiniProgramDeviceLog {
     private String weixinAccount;//微信号
     private String deviceId;//设备id
     private String pindaoId;//频道id

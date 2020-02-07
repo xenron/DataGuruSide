@@ -1,6 +1,6 @@
 package com.example.input;
 
-public class XiaoChenXuProductHuoDong extends XiaoChenXuDeviceLog{
+public class MiniProgramProductHuoDong extends MiniProgramDeviceLog {
     private String weixinAccount;//微信号
     private String huodongId;//活动id
     private String deviceId;//设备id

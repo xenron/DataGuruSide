@@ -2,7 +2,7 @@ package com.example;
 
 import com.alibaba.fastjson.JSONObject;
 import com.example.enums.LogType;
-import com.example.input.XiaoChenxuProductLog;
+import com.example.input.MiniProgramProductLog;
 
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -10,7 +10,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.*;
 
-public class XiaoChenXuProductGenerateData {
+public class MiniProgramProductGenerateData {
 
     private static String [] weixinAccountinfoes = new String[]{
             "xiaogao==小高==男==上海","xiaobai==小白==女==深圳","xiaohei==小黑==男==北京"
@@ -41,38 +41,38 @@ public class XiaoChenXuProductGenerateData {
 
 
 
-    private static XiaoChenxuProductLog genernateData(){
-        XiaoChenxuProductLog  xiaoChenxuProductLog = new  XiaoChenxuProductLog();
-        xiaoChenxuProductLog.setDeviceId(deviceIds[random.nextInt(deviceIds.length)]);
-        xiaoChenxuProductLog.setProductTypeId(productTypeIs[random.nextInt(productTypeIs.length)]);
-        xiaoChenxuProductLog.setProductId(productIds[random.nextInt(productIds.length)]);
-        xiaoChenxuProductLog.setPindaoId(pindaoIds[random.nextInt(pindaoIds.length)]);
-        xiaoChenxuProductLog.setUserId(userIds[random.nextInt(userIds.length)]);
-        xiaoChenxuProductLog.setIp(ips[random.nextInt(ips.length)]);
-        xiaoChenxuProductLog.setCountry(countrys[random.nextInt(countrys.length)]);
-        xiaoChenxuProductLog.setProvince(provinces[random.nextInt(provinces.length)]);
-        xiaoChenxuProductLog.setCity(citys[random.nextInt(citys.length)]);
+    private static MiniProgramProductLog genernateData(){
+        MiniProgramProductLog miniProgramProductLog = new MiniProgramProductLog();
+        miniProgramProductLog.setDeviceId(deviceIds[random.nextInt(deviceIds.length)]);
+        miniProgramProductLog.setProductTypeId(productTypeIs[random.nextInt(productTypeIs.length)]);
+        miniProgramProductLog.setProductId(productIds[random.nextInt(productIds.length)]);
+        miniProgramProductLog.setPindaoId(pindaoIds[random.nextInt(pindaoIds.length)]);
+        miniProgramProductLog.setUserId(userIds[random.nextInt(userIds.length)]);
+        miniProgramProductLog.setIp(ips[random.nextInt(ips.length)]);
+        miniProgramProductLog.setCountry(countrys[random.nextInt(countrys.length)]);
+        miniProgramProductLog.setProvince(provinces[random.nextInt(provinces.length)]);
+        miniProgramProductLog.setCity(citys[random.nextInt(citys.length)]);
         String timerandom = timesList.get(random.nextInt(timesList.size()));
         String openTime = timerandom.split("==")[0];
         String scanTime = timerandom.split("==")[1];
         String jumpTime = timerandom.split("==")[2];
         String leaveTime = timerandom.split("==")[3];
-        xiaoChenxuProductLog.setOpenTime(openTime);
-        xiaoChenxuProductLog.setScantime(scanTime);
-        xiaoChenxuProductLog.setJumpTime(jumpTime);
-        xiaoChenxuProductLog.setLeaveTime(leaveTime);
+        miniProgramProductLog.setOpenTime(openTime);
+        miniProgramProductLog.setScantime(scanTime);
+        miniProgramProductLog.setJumpTime(jumpTime);
+        miniProgramProductLog.setLeaveTime(leaveTime);
         //微信信息
         String weinxinInfo = weixinAccountinfoes[random.nextInt(weixinAccountinfoes.length)];
         String weixinAccount = weinxinInfo.split("==")[0];//微信号
         String weixinName = weinxinInfo.split("==")[1];//微信昵称
         String weixinSex = weinxinInfo.split("==")[2];//微信性别信息
         String weixinArea = weinxinInfo.split("==")[3];//微信地区
-        xiaoChenxuProductLog.setWeixinAccount(weixinAccount);
-        xiaoChenxuProductLog.setWeixinName(weixinName);
-        xiaoChenxuProductLog.setWeixinSex(weixinSex);
-        xiaoChenxuProductLog.setWeixinArea(weixinArea);
-        xiaoChenxuProductLog.setLogType(LogType.XIAOCHENXUPRODUCT);
-        return  xiaoChenxuProductLog;
+        miniProgramProductLog.setWeixinAccount(weixinAccount);
+        miniProgramProductLog.setWeixinName(weixinName);
+        miniProgramProductLog.setWeixinSex(weixinSex);
+        miniProgramProductLog.setWeixinArea(weixinArea);
+        miniProgramProductLog.setLogType(LogType.XIAOCHENXUPRODUCT);
+        return miniProgramProductLog;
 
     }
 
@@ -118,9 +118,9 @@ public class XiaoChenXuProductGenerateData {
 
     public static void main(String[] args) {
         for (int i = 0; i < 50; i++) {
-            XiaoChenxuProductLog xiaoChenxuProductLog = genernateData();
-            System.out.println(JSONObject.toJSON(xiaoChenxuProductLog));
-            postHttpMethod("http://127.0.0.1:8081/collectAppData", JSONObject.toJSONString(xiaoChenxuProductLog));
+            MiniProgramProductLog miniProgramProductLog = genernateData();
+            System.out.println(JSONObject.toJSON(miniProgramProductLog));
+            postHttpMethod("http://127.0.0.1:8081/collectAppData", JSONObject.toJSONString(miniProgramProductLog));
         }
     }
 }

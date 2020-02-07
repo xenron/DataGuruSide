@@ -37,7 +37,7 @@ public class GenerateData {
             System.out.println(stringBuffer.toString());
             inputStream.close();
         } catch (Exception e) {
-
+            System.out.println(e.getStackTrace());
         }
 
     }

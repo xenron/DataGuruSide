@@ -2,7 +2,7 @@ package com.example;
 
 import com.alibaba.fastjson.JSONObject;
 import com.example.enums.LogType;
-import com.example.input.AppProductHuoDong;
+import com.example.input.AppProductEvent;
 
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -12,7 +12,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Random;
 
-public class AppProductHuoDongGenerateData {
+public class AppProductEventGenerateData {
     static Random random = new Random();
     private static int[] days  = new int[]{3,4,5,6};
     private static String[] userIds = new String[]{"1","2"};
@@ -42,30 +42,30 @@ public class AppProductHuoDongGenerateData {
 
 
 
-    private static AppProductHuoDong genernateData(){
-        AppProductHuoDong appProductHuoDong = new AppProductHuoDong();
-        appProductHuoDong.setUserId(userIds[random.nextInt(userIds.length)]);
-        appProductHuoDong.setDeviceId(deviceIds[random.nextInt(deviceIds.length)]);
-        appProductHuoDong.setAppPlatform(appPlatforms[random.nextInt(appPlatforms.length)]);
-        appProductHuoDong.setDeviceStyle(deviceStyles[random.nextInt(deviceStyles.length)]);
-        appProductHuoDong.setBrand(brands[random.nextInt(brands.length)]);
-        appProductHuoDong.setScreenSize(screenSizes[random.nextInt(screenSizes.length)]);
-        appProductHuoDong.setOsType(osTypes[random.nextInt(osTypes.length)]);
-        appProductHuoDong.setHuodongId(huodongIds[random.nextInt(huodongIds.length)]);
-        appProductHuoDong.setIp(ips[random.nextInt(ips.length)]);
-        appProductHuoDong.setCountry(countrys[random.nextInt(countrys.length)]);
-        appProductHuoDong.setProvince(provinces[random.nextInt(provinces.length)]);
-        appProductHuoDong.setCity(citys[random.nextInt(citys.length)]);
-        appProductHuoDong.setNetwork(networks[random.nextInt(networks.length)]);
-        appProductHuoDong.setYunYinShang(yunYinShangs[random.nextInt(yunYinShangs.length)]);
-        appProductHuoDong.setAppVersion(appVersions[random.nextInt(appVersions.length)]);
-        appProductHuoDong.setAppChannel(appChannels[random.nextInt(appChannels.length)]);
-        appProductHuoDong.setOpenTimeStamp(openTimeStampstring);
-        appProductHuoDong.setLeaveTimeStamp(leaveTimeStamp);
-        appProductHuoDong.setScantime(scantime);
-        appProductHuoDong.setJumpTime( jumpTime);
-        appProductHuoDong.setLogType(LogType.APPHUODONG);
-        return  appProductHuoDong;
+    private static AppProductEvent genernateData(){
+        AppProductEvent appProductEvent = new AppProductEvent();
+        appProductEvent.setUserId(userIds[random.nextInt(userIds.length)]);
+        appProductEvent.setDeviceId(deviceIds[random.nextInt(deviceIds.length)]);
+        appProductEvent.setAppPlatform(appPlatforms[random.nextInt(appPlatforms.length)]);
+        appProductEvent.setDeviceStyle(deviceStyles[random.nextInt(deviceStyles.length)]);
+        appProductEvent.setBrand(brands[random.nextInt(brands.length)]);
+        appProductEvent.setScreenSize(screenSizes[random.nextInt(screenSizes.length)]);
+        appProductEvent.setOsType(osTypes[random.nextInt(osTypes.length)]);
+        appProductEvent.setHuodongId(huodongIds[random.nextInt(huodongIds.length)]);
+        appProductEvent.setIp(ips[random.nextInt(ips.length)]);
+        appProductEvent.setCountry(countrys[random.nextInt(countrys.length)]);
+        appProductEvent.setProvince(provinces[random.nextInt(provinces.length)]);
+        appProductEvent.setCity(citys[random.nextInt(citys.length)]);
+        appProductEvent.setNetwork(networks[random.nextInt(networks.length)]);
+        appProductEvent.setYunYinShang(yunYinShangs[random.nextInt(yunYinShangs.length)]);
+        appProductEvent.setAppVersion(appVersions[random.nextInt(appVersions.length)]);
+        appProductEvent.setAppChannel(appChannels[random.nextInt(appChannels.length)]);
+        appProductEvent.setOpenTimeStamp(openTimeStampstring);
+        appProductEvent.setLeaveTimeStamp(leaveTimeStamp);
+        appProductEvent.setScantime(scantime);
+        appProductEvent.setJumpTime( jumpTime);
+        appProductEvent.setLogType(LogType.APPHUODONG);
+        return appProductEvent;
 
     }
 
@@ -111,9 +111,9 @@ public class AppProductHuoDongGenerateData {
 
     public static void main(String[] args) {
         for(int i =0;i<50;i++) {
-            AppProductHuoDong appProductHuoDong = genernateData();
-            System.out.println(JSONObject.toJSON(appProductHuoDong));
-            postHttpMethod("http://127.0.0.1:8081/collectAppData", JSONObject.toJSONString(appProductHuoDong));
+            AppProductEvent appProductEvent = genernateData();
+            System.out.println(JSONObject.toJSON(appProductEvent));
+            postHttpMethod("http://127.0.0.1:8081/collectAppData", JSONObject.toJSONString(appProductEvent));
         }
     }
 }
