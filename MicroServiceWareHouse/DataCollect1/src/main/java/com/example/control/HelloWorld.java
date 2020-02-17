@@ -10,12 +10,12 @@ public class HelloWorld {
 
     @RequestMapping("helloWorld")
     public String  helloWorld(){
-        return "helloWorld";
+        return "HelloWorld-1";
     }
 
-    @RequestMapping(value = "testCollectData",method = RequestMethod.POST)
+    @RequestMapping(value = "testCollectData", method = RequestMethod.POST)
     public String  testCollectData(@RequestBody String data){
-        System.out.println("ceshixiaoguo :"+data);
+        System.out.println("Test-1 :" + data);
         return "success";
     }
 }

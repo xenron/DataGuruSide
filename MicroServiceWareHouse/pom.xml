@@ -24,8 +24,12 @@
     <modules>
         <module>App</module>
         <module>Common</module>
-        <module>DataCollect</module>
-        <module>DataRegister</module>
+        <module>DataCollect1</module>
+        <module>DataCollect2</module>
+        <!--
+        <module>DataCollectConsumer</module>
+        -->
+        <module>RegisterCenter</module>
     </modules>
 
     <dependencyManagement>
